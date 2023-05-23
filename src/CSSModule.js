@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CSSModule.module.css';
+import styles from './styles/CSSModule.scss'
 
 const CSSModule = () => {
   return (
