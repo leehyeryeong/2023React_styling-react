@@ -1,16 +1,32 @@
-import { Component } from 'react';
-import styles from "./styles/CSSModule.module.css";
-import classNames from 'classnames/bind';
+import styled from "styled-components";
 
-const cx = classNames.bind(styles);
+const SimpleButton = styled.button`
+  color: white;
+  background-color: green;
+`;
 
-const CSSModule = () => {
-  return (
-    <div className={cx("wrapper", "inverted")}>
-      안녕하세요, 저는 <span className="something">CSS Module!</span>
-      {/* CSSMoudle.module.css에서 :global로 클래스 이름을 설정하면 문자열 형태("something")으로 표시 */}
-    </div>
+const LargeButton = styled(SimpleButton)`
+  font-size: 50px;
+`;
+
+// 일반적인 방법
+const ReactButton = (props) => {
+  return <button>{props.children}</button>;
+};
+
+const ReactLargeButton = styled(ReactButton)`
+  font-size: 50px;
+`;
+
+const App =  () => {
+  return (  
+    <div> 
+      <SimpleButton>Simple</SimpleButton>
+      <LargeButton>Large</LargeButton>
+      <ReactButton>React</ReactButton>
+      <ReactLargeButton>ReactLarge</ReactLargeButton>
+    </div>  
   );
 };
 
-export default CSSModule;
+export default App;
