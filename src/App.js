@@ -18,6 +18,17 @@ const ReactLargeButton = styled(ReactButton)`
   font-size: 50px;
 `;
 
+// primary라는 props를 주는 경우
+const PrimaryButton = styled.button`
+  color: ${function (props) {
+  if (props.primary) {
+  return "white";
+  } else {
+  return "black";
+  }
+  }};
+`;
+
 const App =  () => {
   return (  
     <div> 
@@ -25,6 +36,8 @@ const App =  () => {
       <LargeButton>Large</LargeButton>
       <ReactButton>React</ReactButton>
       <ReactLargeButton>ReactLarge</ReactLargeButton>
+      <PrimaryButton>Normal</PrimaryButton>
+      <PrimaryButton>Primary</PrimaryButton>
     </div>  
   );
 };
